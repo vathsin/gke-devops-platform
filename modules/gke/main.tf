@@ -12,20 +12,22 @@ resource "google_container_cluster" "gke" {
 }
 
 resource "google_container_node_pool" "primary_nodes" {
-  name       = "primary-node-pool"
-  location   = var.region
-  cluster    = google_container_cluster.gke.name
+  name     = "primary-node-pool"
+  location = var.region
+  cluster  = google_container_cluster.gke.name
+
   node_count = 1
 
   node_config {
-  machine_type = "e2-small"
 
-  disk_size_gb = 20
+    machine_type = "e2-small"
 
-  disk_type = "pd-standard"
+    disk_size_gb = 20
 
-  oauth_scopes = [
-    "https://www.googleapis.com/auth/cloud-platform"
-  ]
-}
+    disk_type = "pd-standard"
+
+    oauth_scopes = [
+      "https://www.googleapis.com/auth/cloud-platform"
+    ]
+  }
 }
