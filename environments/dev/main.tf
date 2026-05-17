@@ -17,4 +17,4 @@ module "gke" {
   subnet_name  = module.network.subnet_name
 }
 
-# Enable API GKE
+# Enable API GKE Cluster
