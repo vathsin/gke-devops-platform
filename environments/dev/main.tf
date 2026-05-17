@@ -16,3 +16,5 @@ module "gke" {
   network_name = module.network.network_name
   subnet_name  = module.network.subnet_name
 }
+
+# Enable API GKE
